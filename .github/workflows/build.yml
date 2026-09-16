@@ -1,0 +1,23 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tests
+        run: bash scripts/test.sh
+      - name: Build archive and cask
+        run: bash scripts/release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: easy-vphone-arm64
+          path: |
+            dist/easy-vphone-*-arm64.zip
+            dist/SHA256SUMS
+            dist/homebrew-easy-vphone/Casks/easy-vphone.rb

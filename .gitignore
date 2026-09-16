@@ -1,0 +1,9 @@
+.build/
+dist/
+.DS_Store
+*.ipa
+*.ipsw
+*.p12
+*.mobileprovision
+*.log
+__pycache__/
