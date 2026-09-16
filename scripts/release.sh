@@ -31,7 +31,7 @@ cask "easy-vphone" do
   homepage "https://github.com/$REPOSITORY"
 
   depends_on arch: :arm64
-  depends_on macos: ">= :sequoia"
+  depends_on macos: :sequoia
 
   app "easy-vphone.app"
 
