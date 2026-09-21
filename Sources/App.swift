@@ -46,6 +46,7 @@ struct MainView: View {
     @ObservedObject var model: VMModel
     @ObservedObject var console: ConsoleModel
     @ObservedObject var browser: BrowserModel
+    @StateObject private var updates = UpdateModel()
     @State private var section = "vms"
     private let timer = Timer.publish(every:8,on:.main,in:.common).autoconnect()
     var body: some View {
@@ -67,7 +68,7 @@ struct MainView: View {
                 Text(tr("storage.title")).font(.system(size:10,weight:.semibold)).foregroundStyle(.secondary)
                 Text(model.root).font(.caption).lineLimit(3).textSelection(.enabled).help(model.root)
                 Button(tr("storage.import"),action:model.chooseRoot).font(.caption).disabled(console.running)
-                Text("0.2.0 · Apple Silicon").font(.caption2).foregroundStyle(.tertiary).padding(.top,12)
+                Text("\(Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—") · Apple Silicon").font(.caption2).foregroundStyle(.tertiary).padding(.top,12)
             }.padding(.horizontal,20).padding(.bottom,20).frame(width:230).background(Color(nsColor:.windowBackgroundColor))
             Divider()
             Group {
@@ -75,15 +76,17 @@ struct MainView: View {
                 case "create": CreateView(model:model)
                 case "ipa": BrowserView(model:browser,vm:model,console:console)
                 case "setup": SetupView(model:model)
-                case "settings": PreferencesView()
+                case "settings": PreferencesView(updates:updates)
                 default: MachinesView(model:model)
                 }
             }.frame(maxWidth:.infinity,maxHeight:.infinity)
         }.frame(minWidth:1120,minHeight:740)
+        .safeAreaInset(edge:.top,spacing:0) { UpdateBanner(model:updates) }
         .sheet(isPresented:$console.presented) { ConsoleView(model:console) }
-        .onAppear { browser.folder = URL(fileURLWithPath:model.root).appendingPathComponent("apps"); browser.refreshFiles(); model.refresh(); model.checkHost() }
-        .onChange(of:model.root) { _, _ in if !browser.busy { browser.folder = URL(fileURLWithPath:model.root).appendingPathComponent("apps"); browser.refreshFiles() } }
+        .onAppear { updates.check(); browser.useDefaultFolder(root:model.root); model.refresh(); model.checkHost() }
+        .onChange(of:model.root) { _, _ in if !browser.busy { browser.useDefaultFolder(root:model.root) } }
         .onReceive(timer) { _ in model.refresh() }
+        .onReceive(NotificationCenter.default.publisher(for:NSApplication.didBecomeActiveNotification)) { _ in updates.check() }
         .onChange(of:model.selected) { _, _ in model.loadSSH() }
     }
     func nav(_ label: String,_ icon: String,_ tag: String) -> some View {
@@ -152,7 +155,7 @@ struct MachinesView: View {
                             Label(tr("ssh.title"),systemImage:"terminal").font(.headline)
                             Text(tr("ssh.help")).font(.callout).foregroundStyle(.secondary)
                             HStack {
-                                TextField(tr("ssh.host"),text:$model.sshHost).frame(minWidth:150)
+                                Label("USB · UDID",systemImage:"cable.connector").frame(minWidth:150)
                                 TextField(tr("ssh.port"),text:$model.sshPort).frame(width:80)
                                 TextField(tr("ssh.user"),text:$model.sshUser).frame(width:110)
                                 Button(tr("common.save"),action:model.saveSSH)

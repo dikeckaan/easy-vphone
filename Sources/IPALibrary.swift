@@ -9,23 +9,8 @@ struct StoreApp: Identifiable, Decodable {
     let price: Double
 }
 struct SearchEnvelope: Decodable { let apps: [StoreApp] }
-struct CommandResult { let code: Int32; let output: String }
-func runTool(_ args: [String]) -> CommandResult {
-    let process = Process()
-    process.executableURL = URL(fileURLWithPath: "/opt/homebrew/bin/ipatool")
-    process.arguments = args + ["--format", "json", "--non-interactive"]
-    var env = ProcessInfo.processInfo.environment
-    env["PATH"] = "/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-    process.environment = env
-    let pipe = Pipe()
-    process.standardOutput = pipe; process.standardError = pipe
-    process.standardInput = FileHandle.nullDevice
-    do {
-        try process.run()
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        process.waitUntilExit()
-        return CommandResult(code: process.terminationStatus, output: String(decoding: data, as: UTF8.self))
-    } catch { return CommandResult(code: -1, output: error.localizedDescription) }
+func runTool(_ args: [String], timeout: TimeInterval = 45, cancellation: CommandCancellation? = nil) -> CommandResult {
+    capture("/opt/homebrew/bin/ipatool", args + ["--format", "json", "--non-interactive"], timeout:timeout, cancellation:cancellation)
 }
 func toolError(_ result: CommandResult) -> String {
     for line in result.output.split(separator: "\n").reversed() {
@@ -36,6 +21,12 @@ func toolError(_ result: CommandResult) -> String {
 }
 
 @MainActor final class BrowserModel: ObservableObject {
+    private var operation: CommandCancellation?
+    func cancel() { operation?.cancel() }
+    func useDefaultFolder(root: String) {
+        guard !busy, UserDefaults.standard.string(forKey:"downloadFolder") == nil else { return }
+        folder = URL(fileURLWithPath:root).appendingPathComponent("apps"); refreshFiles()
+    }
     @Published var query = ""
     @Published var apps: [StoreApp] = []
     @Published var selected: Int?
@@ -65,10 +56,11 @@ func toolError(_ result: CommandResult) -> String {
     func search() {
         let term = query.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !term.isEmpty, !busy else { return }
+        let token = CommandCancellation(); operation = token
         busy = true; error = nil; status = tr("ipa.searching"); tab = 0
         Task {
-            let result = await Task.detached { runTool(["search", term, "--limit", "25", "--platform", "iphone"]) }.value
-            busy = false; hasSearched = true
+            let result = await Task.detached { runTool(["search", term, "--limit", "25", "--platform", "iphone"], cancellation:token) }.value
+            busy = false; operation = nil; hasSearched = true
             guard result.code == 0 else { error = toolError(result); status = tr("ipa.search_failed"); return }
             let envelopes = result.output.split(separator: "\n").compactMap { try? JSONDecoder().decode(SearchEnvelope.self, from: Data($0.utf8)) }
             guard let envelope = envelopes.last else { error = tr("ipa.response_failed"); return }
@@ -99,11 +91,12 @@ func toolError(_ result: CommandResult) -> String {
         let partial = folder.appendingPathComponent(base + "-" + UUID().uuidString + ".partial.ipa")
         var args = ["download", "--app-id", String(app.id), "--platform", "iphone", "--output", partial.path]
         if app.price == 0 { args.append("--purchase") }
+        let token = CommandCancellation(); operation = token
         busy = true; error = nil; status = localizedMessage("ipa.downloading", app.name)
         Task {
             let command = args
-            let result = await Task.detached { runTool(command) }.value
-            busy = false
+            let result = await Task.detached { runTool(command, timeout:1800, cancellation:token) }.value
+            busy = false; operation = nil
             guard result.code == 0 else {
                 error = toolError(result); status = tr("ipa.download_failed")
                 if let error, error.localizedCaseInsensitiveContains("auth") || error.localizedCaseInsensitiveContains("account") || error.localizedCaseInsensitiveContains("session") { loggedIn = false }
@@ -150,7 +143,7 @@ struct BrowserView: View {
                 if !model.loggedIn { Button(tr("ipa.login")) {
                     console.completion = { model.checkSession() }
                     console.start(title:tr("ipa.login_title"), executable:"/opt/homebrew/bin/ipatool", args:["auth","login"], sensitive:true)
-                }.disabled(model.busy || model.checking) }
+                }.disabled(model.busy || model.checking || console.running) }
                 Button { model.checkSession(); model.refreshFiles() } label: { Image(systemName: "arrow.clockwise") }.help(tr("ipa.refresh")).disabled(model.busy)
             }.padding(24)
             HStack {
@@ -231,7 +224,7 @@ struct BrowserView: View {
             VStack(alignment:.leading,spacing:10) {
                 if let error = model.error { Text(tr(error)).font(.callout).foregroundStyle(.red).textSelection(.enabled).lineLimit(4) }
                 HStack {
-                    if model.busy { ProgressView().controlSize(.small) }
+                    if model.busy { ProgressView().controlSize(.small); Button(tr("common.stop"),action:model.cancel) }
                     Text(tr(model.status)).font(.callout).foregroundStyle(.secondary)
                     Spacer()
                     Button(tr("common.choose_folder"),action:model.chooseFolder).disabled(model.busy)

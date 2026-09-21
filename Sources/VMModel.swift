@@ -45,7 +45,7 @@ struct HostCheck: Identifiable {
     @Published var iphoneSource = ""
     @Published var cloudSource = ""
     @Published var xcodeDir: String { didSet { UserDefaults.standard.set(xcodeDir,forKey:"xcodeDir") } }
-    @Published var sshHost = ""
+    @Published var resolvingTarget = false
     @Published var sshPort = "22222"
     @Published var sshUser = "mobile"
     @Published var configCPU = 8
@@ -240,27 +240,41 @@ struct HostCheck: Identifiable {
     private var sshKey: String { "ssh:" + root + "/" + (selected ?? "") }
     func loadSSH() {
         let settings = UserDefaults.standard.dictionary(forKey:sshKey) as? [String:String] ?? [:]
-        // No guessed IP: the user selects the guest's address to avoid targeting a different device.
-        sshHost = settings["host"] ?? ""; sshPort = settings["port"] ?? "22222"; sshUser = settings["user"] ?? "mobile"
+        // SSH is routed through usbmux using the selected VM UDID.
+        sshPort = settings["port"] ?? "22222"; sshUser = settings["user"] ?? "mobile"
         if let vm = current { configCPU = vm.cpu; configRAM = vm.memoryGB }
     }
-    func saveSSH() { UserDefaults.standard.set(["host":sshHost,"port":sshPort,"user":sshUser],forKey:sshKey) }
+    func saveSSH() { UserDefaults.standard.set(["port":sshPort,"user":sshUser],forKey:sshKey) }
     var validSSH: Bool {
-        !sshHost.isEmpty && !sshHost.hasPrefix("-") && sshHost.range(of:"^[a-zA-Z0-9.:%_-]+$",options:.regularExpression) != nil
-        && sshUser.range(of:"^[a-zA-Z0-9_-]+$",options:.regularExpression) != nil
+        !resolvingTarget && sshUser.range(of:"^[a-zA-Z0-9_][a-zA-Z0-9_-]*$",options:.regularExpression) != nil
         && (1...65535).contains(Int(sshPort) ?? 0)
     }
-    func ssh() {
-        guard validSSH, current?.running == true,!console.running else { return }; saveSSH()
-        console.start(title:"SSH · \(selected ?? "VM")",executable:"/usr/bin/ssh",
-            args:["-tt","-o","ConnectTimeout=10","-p",sshPort,"\(sshUser)@\(sshHost)"],sensitive:true)
-    }
-    func repairJBApps() {
-        guard validSSH, current?.running == true, ["jb","exp"].contains(current?.variant ?? ""), !console.running else { return }
-        saveSSH()
-        let command = "if [ -x /cores/vpregister ]; then /cores/vpregister /var/jb/Applications/Sileo.app /var/jb/Applications/TrollStoreLite.app; elif [ -x /var/jb/usr/bin/uicache ]; then /var/jb/usr/bin/uicache -a; else echo 'Jailbreak registration tool not found'; exit 1; fi"
-        console.start(title:tr("repair.title"),executable:"/usr/bin/ssh",
-            args:["-tt","-o","ConnectTimeout=10","-p",sshPort,"\(sshUser)@\(sshHost)",command],sensitive:true)
+    func ssh() { startSSH(repair:false) }
+    func repairJBApps() { startSSH(repair:true) }
+    private func startSSH(repair: Bool) {
+        guard let vm = current, validSSH, vm.running, !console.running,
+              !repair || ["jb","exp"].contains(vm.variant) else { return }
+        guard FileManager.default.isExecutableFile(atPath:"/opt/homebrew/bin/iproxy"),
+              let script = Bundle.main.path(forResource:"ssh-vm",ofType:"py") else {
+            message = tr("ssh.proxy_missing"); return
+        }
+        saveSSH(); resolvingTarget = true
+        let env = environment; let user = sshUser; let port = sshPort
+        Task {
+            defer { resolvingTarget = false }
+            let result = await Task.detached { capture(vphoneCLI,["vm","info",vm.name,"--json"],env:env) }.value
+            guard result.code == 0,
+                  let object = try? JSONSerialization.jsonObject(with:Data(result.output.utf8)) as? [String:Any],
+                  let udid = object["udid"] as? String,
+                  udid.range(of:"^[A-Fa-f0-9-]{16,64}$",options:.regularExpression) != nil else {
+                message = tr("ipa.udid_error"); return
+            }
+            guard current?.directory == vm.directory, !console.running else { return }
+            var args = [script,"--udid",udid,"--user",user,"--port",port]
+            if repair { args.append("--repair") }
+            console.start(title:repair ? tr("repair.title") : "SSH · " + vm.name,
+                          executable:pythonPath(),args:args,sensitive:true)
+        }
     }
     func configure() {
         guard let vm = current,!vm.running,!console.running else { return }

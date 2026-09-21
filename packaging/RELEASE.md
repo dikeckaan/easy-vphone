@@ -4,8 +4,8 @@ The default repository is `dikeckaan/easy-vphone`, the tap repository is `dikeck
 
 1. Run tests and review the source tree. Do not include VM files, account state, IPA files, private keys or local logs.
 2. For public distribution, set `SIGN_IDENTITY` to your Developer ID Application signing identity and `NOTARY_PROFILE` to an existing `notarytool` Keychain profile. Credentials stay in the Keychain.
-3. Run `VERSION=0.2.0 bash scripts/release.sh`. This compiles, signs, optionally notarizes/staples, archives, calculates SHA-256 and generates `dist/homebrew-easy-vphone/Casks/easy-vphone.rb`. No network publishing occurs.
-4. Publish source to `dikeckaan/easy-vphone`, tag `v0.2.0`, and attach `dist/easy-vphone-0.2.0-arm64.zip` and `dist/SHA256SUMS` to that GitHub release.
+3. Run `VERSION=0.3.0 bash scripts/release.sh`. This compiles, signs, optionally notarizes/staples, archives, calculates SHA-256 and generates `dist/homebrew-easy-vphone/Casks/easy-vphone.rb`. No network publishing occurs.
+4. Publish source to `dikeckaan/easy-vphone`, tag `v0.3.0`, and attach `dist/easy-vphone-0.3.0-arm64.zip` and `dist/SHA256SUMS` to that GitHub release.
 5. Copy the generated `Casks/easy-vphone.rb` into `dikeckaan/homebrew-easy-vphone` and push the tap.
 6. Verify on another Apple Silicon Mac: `brew tap dikeckaan/easy-vphone`, then `brew install --cask dikeckaan/easy-vphone/easy-vphone`.
 

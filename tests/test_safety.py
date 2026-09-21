@@ -32,8 +32,17 @@ class InstallerValidationTests(unittest.TestCase):
         self.check_rejected({},'Bilinmeyen işlem',action='oops')
 
 class TerminalTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.stage = tempfile.TemporaryDirectory()
+        cls.bridge = str(Path(cls.stage.name)/'terminal')
+        subprocess.run(['xcrun','clang',str(BASE/'Helpers/terminal.c'),'-o',cls.bridge],check=True)
+    @classmethod
+    def tearDownClass(cls):
+        cls.stage.cleanup()
+
     def start_bridge(self, code):
-        p = subprocess.Popen([sys.executable,str(BASE/'Resources/terminal.py'),sys.executable,'-u','-c',code],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
+        p = subprocess.Popen([self.bridge,sys.executable,'-u','-c',code],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
         self.addCleanup(self.cleanup,p)
         return p
     @staticmethod
@@ -65,3 +74,17 @@ class TerminalTests(unittest.TestCase):
         p=self.start_bridge("print('finished'); raise SystemExit(7)")
         self.read_until(p,b'finished'); p.wait(timeout=5)
         self.assertEqual(p.returncode,7)
+
+    def test_cancel_kills_uncooperative_child(self):
+        p=self.start_bridge("import signal,time; signal.signal(signal.SIGTERM,signal.SIG_IGN); print('ready',flush=True); time.sleep(30)")
+        self.read_until(p,b'ready'); p.terminate(); p.wait(timeout=5)
+        self.assertNotEqual(p.returncode,0)
+
+    def test_bridge_works_without_python_on_path(self):
+        # Keep stdin open for the actual test; EOF intentionally cancels a PTY.
+        p=subprocess.Popen([self.bridge,'/bin/echo','native'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,env={'PATH':'/nonexistent'})
+        try:
+            self.assertIn(b'native',p.stdout.read()); p.wait(timeout=5)
+            self.assertEqual(p.returncode,0)
+        finally:
+            p.stdin.close(); p.stdout.close()

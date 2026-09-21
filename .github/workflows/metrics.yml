@@ -1,0 +1,28 @@
+name: Project statistics
+on:
+  schedule:
+    - cron: '23 */6 * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: project-statistics
+  cancel-in-progress: false
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect aggregate counters
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python3 scripts/metrics.py
+      - name: Publish statistics
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add README.md METRICS.md metrics/data.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update aggregate project statistics [skip ci]'
+            git push
+          fi

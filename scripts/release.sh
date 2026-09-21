@@ -1,7 +1,7 @@
 #!/bin/bash
 set -euo pipefail
 cd "$(dirname "$0")/.."
-VERSION="${VERSION:-0.2.0}"
+VERSION="${VERSION:-0.3.0}"
 REPOSITORY="${REPOSITORY:-dikeckaan/easy-vphone}"
 [[ "$REPOSITORY" =~ ^[a-zA-Z0-9_-]+/[a-zA-Z0-9_.-]+$ ]] || { echo 'Invalid repository' >&2; exit 1; }
 BUILD_STAGE="$(mktemp -d "${TMPDIR:-/tmp}/easy-vphone-release.XXXXXX")"

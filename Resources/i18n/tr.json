@@ -50,7 +50,7 @@
   "vm.stop_warning": "vphone-cli önce kapanmayı ister. 30 saniyede kapanmazsa işlemi zorla sonlandırır; kaydedilmemiş veriler kaybolabilir.",
   "ssh.title": "SSH bağlantısı",
   "ssh.open": "SSH aç",
-  "ssh.help": "VM’nin IP adresini iOS Wi-Fi ayarlarından al. Bağlantı bu uygulama içinde açılır.",
+  "ssh.help": "SSH, USB/UDID üzerinden seçilen VM’ye bağlanır. IP adresi gerekmez.",
   "ssh.host": "VM IP adresi",
   "ssh.user": "Kullanıcı",
   "ssh.port": "Port",
@@ -189,5 +189,12 @@
   "ipa.downloading": "{0} Apple’dan indiriliyor…",
   "ipa.downloaded": "{0} indirildi.",
   "ipa.download_count": "İndirilenler ({0})",
-  "repair.requires_jb": "Bu VM jailbreaksiz (regular/dev) kurulmuş. Sileo ve TrollStore için jb veya exp varyantında bir VM gerekir."
+  "repair.requires_jb": "Bu VM jailbreaksiz (regular/dev) kurulmuş. Sileo ve TrollStore için jb veya exp varyantında bir VM gerekir.",
+  "update.check": "Güncellemeleri denetle",
+  "update.available": "{0} sürümü mevcut. Güncellemeyi indir.",
+  "update.download": "Güncellemeyi indir",
+  "update.brew": "Homebrew komutunu kopyala",
+  "update.current": "İndirilebilir daha yeni bir sürüm bulunamadı.",
+  "update.failed": "Güncelleme denetlenemedi. Tekrar dene.",
+  "ssh.proxy_missing": "Önce bağımlılıkları kur: iproxy gerekli."
 }

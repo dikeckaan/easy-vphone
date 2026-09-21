@@ -10,7 +10,7 @@ A native macOS GUI for [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-cl
 - Clone the upstream repository, prepare an isolated runtime, run firmware creation and resume the CFW stage from the GUI.
 - Start / stop a selected VM; adjust CPU and RAM while it is stopped.
 - Refresh Sileo/TrollStore app registration over SSH on jb/exp VMs. Regular/dev VMs are clearly identified as lacking those jailbreak apps.
-- Open an SSH command session inside the app, with per-VM host/port/user settings.
+- Open an SSH command session inside the app, with per-VM port/user settings and explicit USB/UDID routing.
 - Search the App Store, download official IPAs, and install to the selected VM using its explicit UDID.
 - Reuse the existing ipatool Keychain session. Login / 2FA is handled in an in-app interactive console; credentials are not placed in command arguments or saved by easy-vphone.
 - Check host prerequisites and install Homebrew/dependencies from the GUI.
@@ -35,7 +35,7 @@ bash scripts/test.sh
 bash scripts/release.sh
 ```
 
-Output: `dist/easy-vphone.app`, `dist/easy-vphone-0.2.0-arm64.zip`, checksums and a generated Homebrew cask. The app and distribution files contain no VM images, Apple credentials or downloaded IPAs.
+Output: `dist/easy-vphone.app`, `dist/easy-vphone-0.3.0-arm64.zip`, checksums and a generated Homebrew cask. The app and distribution files contain no VM images, Apple credentials or downloaded IPAs.
 
 ## Homebrew distribution
 
@@ -46,7 +46,7 @@ brew tap dikeckaan/easy-vphone
 brew install --cask dikeckaan/easy-vphone/easy-vphone
 ```
 
-**Version 0.2.0 is Apple Development signed, not notarized. Gatekeeper may block it on other Macs; it is a development preview, not a notarized public-distribution build.** See [packaging/RELEASE.md](packaging/RELEASE.md). A custom tap is separate from acceptance into the official `homebrew/cask` repository.
+**Version 0.3.0 is Apple Development signed, not notarized. Gatekeeper may block it on other Macs; it is a development preview, not a notarized public-distribution build.** See [packaging/RELEASE.md](packaging/RELEASE.md). A custom tap is separate from acceptance into the official `homebrew/cask` repository.
 
 ## Compatibility and limitations
 
@@ -61,14 +61,51 @@ brew install --cask dikeckaan/easy-vphone/easy-vphone
 
 ## Localization
 
-`Resources/i18n/<language>.json` contains 191 stable keys per language. Numbered `{0}` placeholders support reordering without interpreting user values as format strings. Missing translations fall back to English. The locale resolver understands regional system languages. Application text is localized; external command output retains its original language. Tests verify complete key sets, placeholder parity and runtime rendering.
+`Resources/i18n/<language>.json` contains 198 stable keys per language. Numbered `{0}` placeholders support reordering without interpreting user values as format strings. Missing translations fall back to English. The locale resolver understands regional system languages. Application text is localized; external command output retains its original language. Tests verify complete key sets, placeholder parity and runtime rendering.
 
 VM launch diagnostics are stored in `~/Library/Caches/io.github.easy-vphone/VMLogs/`. A VM started by easy-vphone can keep running when the manager exits.
 
-## Validation for 0.2.0
+## Updates and reliability
 
-Automated tests cover input rejection, disconnected volumes, guarded/idempotent runtime preparation, interactive password input without echo, and exit-status propagation. Version 0.2.0 adds catalog/runtime tests, live English/Japanese/Turkish language switching and light/dark appearance checks. Manual checks on the existing iOS 27 VM verified discovery, live running status, an in-app SSH connection and command, and App Store search using the existing session without a password prompt. A fresh end-to-end firmware restore has not been rerun as part of the 0.2.0 verification.
+Version 0.3.0 checks GitHub release metadata on launch and at most every six hours while activating the app. A newer downloadable preview or stable release produces a persistent banner with a download link and a copyable Homebrew upgrade command. Settings has a manual check. There is no silent installation or restart.
+
+**Users on 0.2.0 must upgrade once manually**: that version predates the updater and cannot display a new in-app notice. Run:
+
+```sh
+brew update
+brew upgrade --cask dikeckaan/easy-vphone/easy-vphone
+```
+
+Downloads have a 30-minute timeout and a Stop button. Search/session/VM metadata calls have shorter bounded waits. The bundled native PTY helper permits initial Homebrew setup without Python already installed, and escalates cancellation for unresponsive tasks. A custom IPA folder survives relaunch and VM storage changes.
+
+SSH and JB icon repair are forwarded exclusively to the selected VM UDID using `iproxy`. Guest port and username remain configurable; manual IP routing is removed. The VM must appear in usbmux. Failure never falls back to an attached physical device. SSH host keys are stored under a per-UDID alias.
+
+## Validation for 0.3.0
+
+Automated checks cover command timeout/cancellation, a PTY child ignoring SIGTERM, password echo suppression, native startup without Python on PATH, numeric version comparison, update asset URL validation, SSH identity validation, metric aggregation and stale-traffic preservation, plus the existing installer/runtime/i18n tests. A full fresh firmware restore and a new VM SSH connection have not been rerun as part of this release's verification.
 
 ## Credits
 
 Based on the tools from [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-cli), [ipatool](https://github.com/majd/ipatool), [libimobiledevice](https://libimobiledevice.org/) and [amfidont](https://github.com/zqxwce/amfidont). The copied/modified vphone patchers retain the upstream MIT license in `Resources/VPHONE-LICENSE`. Third-party binaries and Apple firmware are obtained separately, not redistributed here.
+
+<!-- metrics:start -->
+## Project statistics
+
+Updated: **2026-09-20 13:16 UTC**. Counts are events, not installs or people.
+
+| Metric | Count |
+|---|---:|
+| ZIP downloads across releases | 3 |
+| Stars | 2 |
+| Forks | 0 |
+| Watchers | 0 |
+| Open issues + pull requests | 0 |
+| Clones, last 14-day snapshot | 32 |
+| Unique cloners, same snapshot | 20 |
+| Page views, last 14-day snapshot | 3 |
+| Unique visitors, same snapshot | 3 |
+
+[Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
+GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
+Automated builds and verification downloads can contribute to these counters.
+<!-- metrics:end -->

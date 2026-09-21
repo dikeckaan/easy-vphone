@@ -50,7 +50,7 @@
   "vm.stop_warning": "After 30 seconds, vphone-cli may force termination. Unsaved data may be lost.",
   "ssh.title": "SSH connection",
   "ssh.open": "Open SSH",
-  "ssh.help": "Find the VM IP in iOS Wi-Fi settings. SSH opens inside this app.",
+  "ssh.help": "SSH connects to the selected VM through USB/UDID. No IP address is required.",
   "ssh.host": "VM IP address",
   "ssh.user": "User",
   "ssh.port": "Port",
@@ -189,5 +189,12 @@
   "ipa.downloading": "Downloading {0} from Apple…",
   "ipa.downloaded": "Downloaded {0}.",
   "ipa.download_count": "Downloads ({0})",
-  "repair.requires_jb": "This VM uses regular/dev firmware. Sileo and TrollStore require a jb or exp VM."
+  "repair.requires_jb": "This VM uses regular/dev firmware. Sileo and TrollStore require a jb or exp VM.",
+  "update.check": "Check for updates",
+  "update.available": "Version {0} is available. Download the update.",
+  "update.download": "Download update",
+  "update.brew": "Copy Homebrew command",
+  "update.current": "No newer downloadable release found.",
+  "update.failed": "Update check failed. Try again.",
+  "ssh.proxy_missing": "Install dependencies first: iproxy is required."
 }

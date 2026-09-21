@@ -50,7 +50,7 @@
   "vm.stop_warning": "30秒後に強制終了する場合があります。未保存のデータが失われる可能性があります。",
   "ssh.title": "SSH接続",
   "ssh.open": "SSHを開く",
-  "ssh.help": "iOSのWi-Fi設定でVMのIPを確認。SSHはこのアプリ内で開きます。",
+  "ssh.help": "SSHはUSB/UDID経由で選択したVMに接続します。IPアドレスは不要です。",
   "ssh.host": "VMのIPアドレス",
   "ssh.user": "ユーザー",
   "ssh.port": "ポート",
@@ -189,5 +189,12 @@
   "ipa.downloading": "Appleから {0} をダウンロード中…",
   "ipa.downloaded": "{0} をダウンロードしました。",
   "ipa.download_count": "ダウンロード ({0})",
-  "repair.requires_jb": "このVMはregular/devファームウェアです。SileoとTrollStoreにはjbまたはexpのVMが必要です。"
+  "repair.requires_jb": "このVMはregular/devファームウェアです。SileoとTrollStoreにはjbまたはexpのVMが必要です。",
+  "update.check": "アップデートを確認",
+  "update.available": "バージョン {0} が利用可能です。更新をダウンロードしてください。",
+  "update.download": "更新をダウンロード",
+  "update.brew": "Homebrewコマンドをコピー",
+  "update.current": "ダウンロード可能な新しいバージョンはありません。",
+  "update.failed": "更新を確認できませんでした。再試行してください。",
+  "ssh.proxy_missing": "先に依存ツールをインストールしてください。iproxyが必要です。"
 }

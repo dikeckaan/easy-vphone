@@ -50,7 +50,7 @@
   "vm.stop_warning": "30 秒后 vphone-cli 可能强制结束进程，未保存的数据可能丢失。",
   "ssh.title": "SSH 连接",
   "ssh.open": "打开 SSH",
-  "ssh.help": "在 iOS 的 Wi-Fi 设置中查看虚拟机 IP。SSH 在本应用内打开。",
+  "ssh.help": "SSH 通过 USB/UDID 连接所选虚拟机，无需 IP 地址。",
   "ssh.host": "虚拟机 IP 地址",
   "ssh.user": "用户",
   "ssh.port": "端口",
@@ -189,5 +189,12 @@
   "ipa.downloading": "正在从 Apple 下载 {0}…",
   "ipa.downloaded": "已下载 {0}。",
   "ipa.download_count": "下载 ({0})",
-  "repair.requires_jb": "此虚拟机使用 regular/dev 固件。Sileo 和 TrollStore 需要 jb 或 exp 类型的虚拟机。"
+  "repair.requires_jb": "此虚拟机使用 regular/dev 固件。Sileo 和 TrollStore 需要 jb 或 exp 类型的虚拟机。",
+  "update.check": "检查更新",
+  "update.available": "版本 {0} 已发布。请下载更新。",
+  "update.download": "下载更新",
+  "update.brew": "复制 Homebrew 命令",
+  "update.current": "未发现可下载的更新版本。",
+  "update.failed": "检查更新失败，请重试。",
+  "ssh.proxy_missing": "请先安装依赖项：需要 iproxy。"
 }

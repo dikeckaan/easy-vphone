@@ -1,6 +1,6 @@
 cask "easy-vphone" do
-  version "0.2.0"
-  sha256 "3e8eaa28c914b6333070f688e272c4d780577346537f24a2e0861c721a9251b3"
+  version "0.3.0"
+  sha256 "b429a5ce73b822efbebf38ef4795cf2274bf2353d3661b3c2c840acc893ce196"
 
   url "https://github.com/dikeckaan/easy-vphone/releases/download/v#{version}/easy-vphone-#{version}-arm64.zip"
   name "easy-vphone"

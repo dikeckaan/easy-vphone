@@ -28,11 +28,17 @@ let panelColor = Color(nsColor:NSColor(name:nil) { appearance in
 })
 
 struct PreferencesView: View {
+    @ObservedObject var updates: UpdateModel
     @EnvironmentObject var preferences: InterfacePreferences
     var body: some View {
         ScrollView {
             VStack(alignment:.leading,spacing:22) {
                 PageTitle(title:tr("settings.title"),subtitle:tr("settings.subtitle"))
+                Panel {
+                    HStack { Text("easy-vphone " + updates.current).font(.headline); Spacer(); Button(tr("update.check")) { updates.check(force:true) }.disabled(updates.checking) }
+                    if updates.checking { ProgressView() }
+                    if !updates.status.isEmpty { Text(tr(updates.status)).font(.caption).foregroundStyle(.secondary) }
+                }
                 Panel {
                     Label(tr("settings.language"),systemImage:"globe").font(.headline)
                     Picker(tr("settings.language"),selection:$preferences.language) {

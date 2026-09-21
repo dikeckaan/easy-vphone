@@ -2,16 +2,6 @@ import SwiftUI
 import AppKit
 import Combine
 
-let toolPATH = "/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-let vphoneCLI = "/Applications/vphone-cli.app/Contents/MacOS/vphone-cli"
-func capture(_ executable: String, _ args: [String], env: [String:String] = [:]) -> CommandResult {
-    let p = Process(); p.executableURL = URL(fileURLWithPath: executable); p.arguments = args
-    p.environment = ProcessInfo.processInfo.environment.merging(["PATH":toolPATH]) { _, n in n }.merging(env) { _, n in n }
-    let pipe = Pipe(); p.standardOutput = pipe; p.standardError = pipe; p.standardInput = FileHandle.nullDevice
-    do { try p.run(); let data = pipe.fileHandleForReading.readDataToEndOfFile(); p.waitUntilExit()
-        return CommandResult(code:p.terminationStatus, output:String(decoding:data,as:UTF8.self))
-    } catch { return CommandResult(code:-1,output:error.localizedDescription) }
-}
 func pythonPath() -> String {
     for path in ["/opt/homebrew/bin/python3.13", "/opt/homebrew/bin/python3", "/usr/bin/python3"] {
         if FileManager.default.isExecutableFile(atPath:path) { return path }
@@ -36,8 +26,8 @@ func pythonPath() -> String {
         guard !running else { presented = true; return }
         self.title = title; output = ""; reply = ""; secrets = []; exitCode = nil
         self.sensitive = sensitive; presented = true
-        guard let bridge = Bundle.main.path(forResource:"terminal",ofType:"py") else { output = tr("console.missing"); return }
-        let p = Process(); p.executableURL = URL(fileURLWithPath:pythonPath()); p.arguments = [bridge,executable] + args
+        guard let bridge = Bundle.main.path(forResource:"easy-vphone-terminal",ofType:nil) else { output = tr("console.missing"); return }
+        let p = Process(); p.executableURL = URL(fileURLWithPath:bridge); p.arguments = [executable] + args
         p.environment = ProcessInfo.processInfo.environment.merging(["PATH":toolPATH,"PYTHONUNBUFFERED":"1","NO_COLOR":"1"]) { _, n in n }.merging(env) { _, n in n }
         let incoming = Pipe(); let outgoing = Pipe(); input = incoming
         p.standardInput = incoming; p.standardOutput = outgoing; p.standardError = outgoing

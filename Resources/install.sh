@@ -22,7 +22,7 @@ if [[ -n "${XCODE_DIR:-}" ]]; then export DEVELOPER_DIR="$XCODE_DIR"; fi
 command -v brew >/dev/null || die 'Önce Hazırlık ekranından Homebrew kur.'
 xcrun --find clang >/dev/null 2>&1 || die 'Xcode Command Line Tools gerekli.'
 if [[ "$ACTION" == dependencies ]]; then
-  brew install python@3.13 aria2 wget gnu-tar openssl@3 ldid-procursus sshpass keystone cmake libusb ipsw zstd ipatool ideviceinstaller
+  brew install python@3.13 aria2 wget gnu-tar openssl@3 ldid-procursus sshpass keystone cmake libusb ipsw zstd ipatool ideviceinstaller libusbmuxd
   if [[ ! -x /Applications/vphone-cli.app/Contents/MacOS/vphone-cli ]]; then
     brew install --cask zqxwce/tap/vphone-cli
   fi
