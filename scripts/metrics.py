@@ -108,7 +108,7 @@ def render(data, root):
     lines+=['','## Collection and limitations','',
             '- Public release/stars/forks counters refresh every six hours through GitHub Actions.',
             '- Traffic requires additional repository access. If Actions cannot read it, the last successful snapshot and its timestamp remain visible.',
-            '- The owner’s local collector can refresh traffic using the existing gh login; no account token is committed or copied into repository secrets.',
+            '- The owner’s Mac refreshes traffic every six hours while logged in and online, using its existing gh session. If the Mac is off, the last snapshot remains visible. No account token is committed or copied into repository secrets.',
             '- GitHub exposes only the last 14 days of traffic. Daily snapshots are merged by UTC date to avoid double-counting; missed days older than that cannot be recovered.',
             '- ZIP downloads include manual downloads, Homebrew downloads and validation downloads. They do not count installs or unique people.',
             '- Source ZIP downloads and git clones are different metrics. There is no lifetime unique clone/download count here.',
