@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-09-22 18:21 UTC**. Counts are events, not installs or people.
+Updated: **2026-09-22 18:24 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -11,10 +11,10 @@ Updated: **2026-09-22 18:21 UTC**. Counts are events, not installs or people.
 | Forks | 0 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 32 |
-| Unique cloners, same snapshot | 20 |
-| Page views, last 14-day snapshot | 3 |
-| Unique visitors, same snapshot | 3 |
+| Clones, last 14-day snapshot | 34 |
+| Unique cloners, same snapshot | 22 |
+| Page views, last 14-day snapshot | 6 |
+| Unique visitors, same snapshot | 5 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
@@ -24,20 +24,22 @@ Automated builds and verification downloads can contribute to these counters.
 
 | Release | Asset | Downloads | Bytes |
 |---|---|---:|---:|
+| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 0 | 525642 |
+| v0.3.0 | SHA256SUMS | 0 | 94 |
 | v0.2.0 | easy-vphone-0.2.0-arm64.zip | 4 | 483040 |
 | v0.2.0 | SHA256SUMS | 1 | 94 |
 
 ## Clones
 
-Last successful traffic snapshot: **2026-09-20 13:16 UTC**.
-14-day total: **32**; unique cloners: **20**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-09-22 18:24 UTC**.
+14-day total: **34**; unique cloners: **22**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-09-21 | 0 | 0 |
+| 2026-09-20 | 2 | 2 |
 | 2026-09-19 | 1 | 1 |
 | 2026-09-18 | 0 | 0 |
 | 2026-09-17 | 2 | 2 |
@@ -58,15 +60,15 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-09-20 13:16 UTC**.
-14-day total: **3**; unique visitors: **3**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-09-22 18:24 UTC**.
+14-day total: **6**; unique visitors: **5**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-09-21 | 0 | 0 |
+| 2026-09-20 | 3 | 2 |
 | 2026-09-19 | 0 | 0 |
 | 2026-09-18 | 1 | 1 |
 | 2026-09-17 | 0 | 0 |
@@ -89,7 +91,7 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 - Public release/stars/forks counters refresh every six hours through GitHub Actions.
 - Traffic requires additional repository access. If Actions cannot read it, the last successful snapshot and its timestamp remain visible.
-- The owner’s local collector can refresh traffic using the existing gh login; no account token is committed or copied into repository secrets.
+- The owner’s Mac refreshes traffic every six hours while logged in and online, using its existing gh session. If the Mac is off, the last snapshot remains visible. No account token is committed or copied into repository secrets.
 - GitHub exposes only the last 14 days of traffic. Daily snapshots are merged by UTC date to avoid double-counting; missed days older than that cannot be recovered.
 - ZIP downloads include manual downloads, Homebrew downloads and validation downloads. They do not count installs or unique people.
 - Source ZIP downloads and git clones are different metrics. There is no lifetime unique clone/download count here.

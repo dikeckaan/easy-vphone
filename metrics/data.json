@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22 18:21 UTC",
+  "updated_at": "2026-09-22 18:24 UTC",
   "repository": {
     "stargazers_count": 2,
     "forks_count": 0,
@@ -7,6 +7,22 @@
     "open_issues_count": 0
   },
   "releases": [
+    {
+      "version": "v0.3.0",
+      "prerelease": true,
+      "assets": [
+        {
+          "name": "easy-vphone-0.3.0-arm64.zip",
+          "downloads": 0,
+          "bytes": 525642
+        },
+        {
+          "name": "SHA256SUMS",
+          "downloads": 0,
+          "bytes": 94
+        }
+      ]
+    },
     {
       "version": "v0.2.0",
       "prerelease": true,
@@ -25,9 +41,9 @@
     }
   ],
   "clones": {
-    "updated_at": "2026-09-20 13:16 UTC",
-    "count": 32,
-    "uniques": 20,
+    "updated_at": "2026-09-22 18:24 UTC",
+    "count": 34,
+    "uniques": 22,
     "daily": [
       {
         "timestamp": "2026-09-03T00:00:00Z",
@@ -113,13 +129,23 @@
         "timestamp": "2026-09-19T00:00:00Z",
         "count": 1,
         "uniques": 1
+      },
+      {
+        "timestamp": "2026-09-20T00:00:00Z",
+        "count": 2,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-09-21T00:00:00Z",
+        "count": 0,
+        "uniques": 0
       }
     ]
   },
   "views": {
-    "updated_at": "2026-09-20 13:16 UTC",
-    "count": 3,
-    "uniques": 3,
+    "updated_at": "2026-09-22 18:24 UTC",
+    "count": 6,
+    "uniques": 5,
     "daily": [
       {
         "timestamp": "2026-09-03T00:00:00Z",
@@ -205,9 +231,17 @@
         "timestamp": "2026-09-19T00:00:00Z",
         "count": 0,
         "uniques": 0
+      },
+      {
+        "timestamp": "2026-09-20T00:00:00Z",
+        "count": 3,
+        "uniques": 2
+      },
+      {
+        "timestamp": "2026-09-21T00:00:00Z",
+        "count": 0,
+        "uniques": 0
       }
     ]
-  },
-  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
-  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
+  }
 }
