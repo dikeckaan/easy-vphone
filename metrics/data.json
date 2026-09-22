@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-20 13:16 UTC",
+  "updated_at": "2026-09-22 18:21 UTC",
   "repository": {
     "stargazers_count": 2,
     "forks_count": 0,
@@ -13,7 +13,7 @@
       "assets": [
         {
           "name": "easy-vphone-0.2.0-arm64.zip",
-          "downloads": 3,
+          "downloads": 4,
           "bytes": 483040
         },
         {
@@ -207,5 +207,7 @@
         "uniques": 0
       }
     ]
-  }
+  },
+  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
+  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
 }
