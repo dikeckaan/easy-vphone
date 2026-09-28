@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-28 05:31 UTC",
+  "updated_at": "2026-09-28 09:52 UTC",
   "repository": {
-    "stargazers_count": 7,
+    "stargazers_count": 8,
     "forks_count": 0,
     "subscribers_count": 0,
     "open_issues_count": 0
@@ -13,12 +13,12 @@
       "assets": [
         {
           "name": "easy-vphone-0.3.0-arm64.zip",
-          "downloads": 4,
+          "downloads": 5,
           "bytes": 525642
         },
         {
           "name": "SHA256SUMS",
-          "downloads": 0,
+          "downloads": 1,
           "bytes": 94
         }
       ]
@@ -41,7 +41,7 @@
     }
   ],
   "clones": {
-    "updated_at": "2026-09-28 03:52 UTC",
+    "updated_at": "2026-09-28 09:52 UTC",
     "count": 129,
     "uniques": 61,
     "daily": [
@@ -153,7 +153,7 @@
     ]
   },
   "views": {
-    "updated_at": "2026-09-28 03:52 UTC",
+    "updated_at": "2026-09-28 09:52 UTC",
     "count": 14,
     "uniques": 8,
     "daily": [
@@ -263,7 +263,5 @@
         "uniques": 2
       }
     ]
-  },
-  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
-  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
+  }
 }
