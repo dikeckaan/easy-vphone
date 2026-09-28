@@ -1,7 +1,7 @@
 {
-  "updated_at": "2026-09-27 21:52 UTC",
+  "updated_at": "2026-09-28 03:52 UTC",
   "repository": {
-    "stargazers_count": 2,
+    "stargazers_count": 6,
     "forks_count": 0,
     "subscribers_count": 0,
     "open_issues_count": 0
@@ -13,7 +13,7 @@
       "assets": [
         {
           "name": "easy-vphone-0.3.0-arm64.zip",
-          "downloads": 2,
+          "downloads": 4,
           "bytes": 525642
         },
         {
@@ -41,7 +41,7 @@
     }
   ],
   "clones": {
-    "updated_at": "2026-09-27 21:52 UTC",
+    "updated_at": "2026-09-28 03:52 UTC",
     "count": 129,
     "uniques": 61,
     "daily": [
@@ -153,7 +153,7 @@
     ]
   },
   "views": {
-    "updated_at": "2026-09-27 21:52 UTC",
+    "updated_at": "2026-09-28 03:52 UTC",
     "count": 14,
     "uniques": 8,
     "daily": [
