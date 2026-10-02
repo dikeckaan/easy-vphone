@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02 05:13 UTC",
+  "updated_at": "2026-10-02 05:47 UTC",
   "repository": {
     "stargazers_count": 8,
     "forks_count": 0,
@@ -333,5 +333,7 @@
         "uniques": 5
       }
     ]
-  }
+  },
+  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
+  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
 }
