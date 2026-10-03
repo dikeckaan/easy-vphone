@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-10-03 11:46 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-03 16:27 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
