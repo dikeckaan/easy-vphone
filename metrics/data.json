@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-09 06:16 UTC",
+  "updated_at": "2026-10-09 10:31 UTC",
   "repository": {
     "stargazers_count": 9,
     "forks_count": 1,
@@ -13,7 +13,7 @@
       "assets": [
         {
           "name": "easy-vphone-0.3.0-arm64.zip",
-          "downloads": 5,
+          "downloads": 6,
           "bytes": 525642
         },
         {
@@ -41,9 +41,9 @@
     }
   ],
   "clones": {
-    "updated_at": "2026-10-09 04:31 UTC",
-    "count": 964,
-    "uniques": 367,
+    "updated_at": "2026-10-09 10:31 UTC",
+    "count": 965,
+    "uniques": 361,
     "daily": [
       {
         "timestamp": "2026-09-03T00:00:00Z",
@@ -219,13 +219,18 @@
         "timestamp": "2026-10-07T00:00:00Z",
         "count": 62,
         "uniques": 30
+      },
+      {
+        "timestamp": "2026-10-08T00:00:00Z",
+        "count": 87,
+        "uniques": 45
       }
     ]
   },
   "views": {
-    "updated_at": "2026-10-09 04:31 UTC",
-    "count": 98,
-    "uniques": 53,
+    "updated_at": "2026-10-09 10:31 UTC",
+    "count": 105,
+    "uniques": 59,
     "daily": [
       {
         "timestamp": "2026-09-03T00:00:00Z",
@@ -401,9 +406,12 @@
         "timestamp": "2026-10-07T00:00:00Z",
         "count": 4,
         "uniques": 3
+      },
+      {
+        "timestamp": "2026-10-08T00:00:00Z",
+        "count": 11,
+        "uniques": 8
       }
     ]
-  },
-  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
-  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
+  }
 }

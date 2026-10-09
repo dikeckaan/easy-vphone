@@ -2,19 +2,19 @@
 
 ## Project statistics
 
-Updated: **2026-10-09 06:16 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-09 10:31 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 9 |
+| ZIP downloads across releases | 10 |
 | Stars | 9 |
 | Forks | 1 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 964 |
-| Unique cloners, same snapshot | 367 |
-| Page views, last 14-day snapshot | 98 |
-| Unique visitors, same snapshot | 53 |
+| Clones, last 14-day snapshot | 965 |
+| Unique cloners, same snapshot | 361 |
+| Page views, last 14-day snapshot | 105 |
+| Unique visitors, same snapshot | 59 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
@@ -24,22 +24,21 @@ Automated builds and verification downloads can contribute to these counters.
 
 | Release | Asset | Downloads | Bytes |
 |---|---|---:|---:|
-| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 5 | 525642 |
+| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 6 | 525642 |
 | v0.3.0 | SHA256SUMS | 1 | 94 |
 | v0.2.0 | easy-vphone-0.2.0-arm64.zip | 4 | 483040 |
 | v0.2.0 | SHA256SUMS | 1 | 94 |
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-09 04:31 UTC**.
-14-day total: **964**; unique cloners: **367**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-09 10:31 UTC**.
+14-day total: **965**; unique cloners: **361**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-08 | 87 | 45 |
 | 2026-10-07 | 62 | 30 |
 | 2026-10-06 | 70 | 34 |
 | 2026-10-05 | 46 | 22 |
@@ -78,15 +77,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-09 04:31 UTC**.
-14-day total: **98**; unique visitors: **53**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-09 10:31 UTC**.
+14-day total: **105**; unique visitors: **59**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-08 | 11 | 8 |
 | 2026-10-07 | 4 | 3 |
 | 2026-10-06 | 1 | 1 |
 | 2026-10-05 | 0 | 0 |
