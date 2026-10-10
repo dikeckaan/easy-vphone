@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-10-10 05:59 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-10 10:32 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -11,9 +11,9 @@ Updated: **2026-10-10 05:59 UTC**. Counts are events, not installs or people.
 | Forks | 1 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 965 |
-| Unique cloners, same snapshot | 361 |
-| Page views, last 14-day snapshot | 105 |
+| Clones, last 14-day snapshot | 909 |
+| Unique cloners, same snapshot | 329 |
+| Page views, last 14-day snapshot | 107 |
 | Unique visitors, same snapshot | 59 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
@@ -31,15 +31,14 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-10 04:32 UTC**.
-14-day total: **965**; unique cloners: **361**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-10 10:32 UTC**.
+14-day total: **909**; unique cloners: **329**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-09 | 36 | 14 |
 | 2026-10-08 | 87 | 45 |
 | 2026-10-07 | 62 | 30 |
 | 2026-10-06 | 70 | 34 |
@@ -79,15 +78,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-10 04:32 UTC**.
-14-day total: **105**; unique visitors: **59**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-10 10:32 UTC**.
+14-day total: **107**; unique visitors: **59**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-09 | 3 | 2 |
 | 2026-10-08 | 11 | 8 |
 | 2026-10-07 | 4 | 3 |
 | 2026-10-06 | 1 | 1 |
