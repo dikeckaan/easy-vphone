@@ -2,12 +2,12 @@
 
 ## Project statistics
 
-Updated: **2026-10-09 22:43 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-10 04:32 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
 | ZIP downloads across releases | 10 |
-| Stars | 9 |
+| Stars | 10 |
 | Forks | 1 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
@@ -31,10 +31,8 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-09 22:32 UTC**.
+Last successful traffic snapshot: **2026-10-10 04:32 UTC**.
 14-day total: **965**; unique cloners: **361**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
@@ -79,10 +77,8 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-09 22:32 UTC**.
+Last successful traffic snapshot: **2026-10-10 04:32 UTC**.
 14-day total: **105**; unique visitors: **59**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
