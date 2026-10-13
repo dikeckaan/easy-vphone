@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-10-13 03:50 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-13 09:50 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -11,10 +11,10 @@ Updated: **2026-10-13 03:50 UTC**. Counts are events, not installs or people.
 | Forks | 1 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 939 |
-| Unique cloners, same snapshot | 337 |
-| Page views, last 14-day snapshot | 107 |
-| Unique visitors, same snapshot | 59 |
+| Clones, last 14-day snapshot | 916 |
+| Unique cloners, same snapshot | 324 |
+| Page views, last 14-day snapshot | 58 |
+| Unique visitors, same snapshot | 28 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
@@ -31,13 +31,14 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-13 03:50 UTC**.
-14-day total: **939**; unique cloners: **337**.
+Last successful traffic snapshot: **2026-10-13 09:50 UTC**.
+14-day total: **916**; unique cloners: **324**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-12 | 49 | 23 |
 | 2026-10-11 | 104 | 49 |
 | 2026-10-10 | 74 | 36 |
 | 2026-10-09 | 36 | 14 |
@@ -80,13 +81,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-13 03:50 UTC**.
-14-day total: **107**; unique visitors: **59**.
+Last successful traffic snapshot: **2026-10-13 09:50 UTC**.
+14-day total: **58**; unique visitors: **28**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-12 | 5 | 3 |
 | 2026-10-11 | 0 | 0 |
 | 2026-10-10 | 8 | 6 |
 | 2026-10-09 | 3 | 2 |

@@ -91,7 +91,7 @@ Based on the tools from [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-c
 <!-- metrics:start -->
 ## Project statistics
 
-Updated: **2026-10-13 03:50 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-13 09:50 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -100,10 +100,10 @@ Updated: **2026-10-13 03:50 UTC**. Counts are events, not installs or people.
 | Forks | 1 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 939 |
-| Unique cloners, same snapshot | 337 |
-| Page views, last 14-day snapshot | 107 |
-| Unique visitors, same snapshot | 59 |
+| Clones, last 14-day snapshot | 916 |
+| Unique cloners, same snapshot | 324 |
+| Page views, last 14-day snapshot | 58 |
+| Unique visitors, same snapshot | 28 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
