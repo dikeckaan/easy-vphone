@@ -2,17 +2,17 @@
 
 ## Project statistics
 
-Updated: **2026-10-26 04:55 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-26 09:55 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 12 |
+| ZIP downloads across releases | 14 |
 | Stars | 11 |
 | Forks | 2 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 1102 |
-| Unique cloners, same snapshot | 352 |
+| Clones, last 14-day snapshot | 1066 |
+| Unique cloners, same snapshot | 329 |
 | Page views, last 14-day snapshot | 23 |
 | Unique visitors, same snapshot | 9 |
 
@@ -24,22 +24,21 @@ Automated builds and verification downloads can contribute to these counters.
 
 | Release | Asset | Downloads | Bytes |
 |---|---|---:|---:|
-| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 8 | 525642 |
-| v0.3.0 | SHA256SUMS | 2 | 94 |
-| v0.2.0 | easy-vphone-0.2.0-arm64.zip | 4 | 483040 |
-| v0.2.0 | SHA256SUMS | 1 | 94 |
+| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 9 | 525642 |
+| v0.3.0 | SHA256SUMS | 3 | 94 |
+| v0.2.0 | easy-vphone-0.2.0-arm64.zip | 5 | 483040 |
+| v0.2.0 | SHA256SUMS | 2 | 94 |
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-26 03:55 UTC**.
-14-day total: **1102**; unique cloners: **352**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-26 09:55 UTC**.
+14-day total: **1066**; unique cloners: **329**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-25 | 68 | 27 |
 | 2026-10-24 | 81 | 32 |
 | 2026-10-23 | 76 | 32 |
 | 2026-10-22 | 103 | 42 |
@@ -95,15 +94,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-26 03:55 UTC**.
+Last successful traffic snapshot: **2026-10-26 09:55 UTC**.
 14-day total: **23**; unique visitors: **9**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-25 | 0 | 0 |
 | 2026-10-24 | 3 | 2 |
 | 2026-10-23 | 1 | 1 |
 | 2026-10-22 | 1 | 1 |

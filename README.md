@@ -91,17 +91,17 @@ Based on the tools from [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-c
 <!-- metrics:start -->
 ## Project statistics
 
-Updated: **2026-10-26 04:55 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-26 09:55 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 12 |
+| ZIP downloads across releases | 14 |
 | Stars | 11 |
 | Forks | 2 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 1102 |
-| Unique cloners, same snapshot | 352 |
+| Clones, last 14-day snapshot | 1066 |
+| Unique cloners, same snapshot | 329 |
 | Page views, last 14-day snapshot | 23 |
 | Unique visitors, same snapshot | 9 |
 
