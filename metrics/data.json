@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26 22:43 UTC",
+  "updated_at": "2026-10-27 03:55 UTC",
   "repository": {
     "stargazers_count": 11,
     "forks_count": 2,
@@ -41,7 +41,7 @@
     }
   ],
   "clones": {
-    "updated_at": "2026-10-26 21:55 UTC",
+    "updated_at": "2026-10-27 03:55 UTC",
     "count": 1066,
     "uniques": 329,
     "daily": [
@@ -313,7 +313,7 @@
     ]
   },
   "views": {
-    "updated_at": "2026-10-26 21:55 UTC",
+    "updated_at": "2026-10-27 03:55 UTC",
     "count": 23,
     "uniques": 9,
     "daily": [
@@ -583,7 +583,5 @@
         "uniques": 0
       }
     ]
-  },
-  "clones_error": "Traffic API unavailable to this collector; last successful snapshot retained.",
-  "views_error": "Traffic API unavailable to this collector; last successful snapshot retained."
+  }
 }
