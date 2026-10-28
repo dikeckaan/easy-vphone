@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-10-28 15:56 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-28 21:56 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -31,7 +31,7 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-28 15:56 UTC**.
+Last successful traffic snapshot: **2026-10-28 21:56 UTC**.
 14-day total: **1110**; unique cloners: **338**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
@@ -96,7 +96,7 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-28 15:56 UTC**.
+Last successful traffic snapshot: **2026-10-28 21:56 UTC**.
 14-day total: **20**; unique visitors: **9**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
