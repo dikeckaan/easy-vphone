@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-10-28 05:51 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-28 09:56 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -11,10 +11,10 @@ Updated: **2026-10-28 05:51 UTC**. Counts are events, not installs or people.
 | Forks | 2 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 1113 |
-| Unique cloners, same snapshot | 347 |
+| Clones, last 14-day snapshot | 1110 |
+| Unique cloners, same snapshot | 338 |
 | Page views, last 14-day snapshot | 20 |
-| Unique visitors, same snapshot | 8 |
+| Unique visitors, same snapshot | 9 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
@@ -31,15 +31,14 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-28 03:56 UTC**.
-14-day total: **1113**; unique cloners: **347**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-28 09:56 UTC**.
+14-day total: **1110**; unique cloners: **338**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-27 | 89 | 35 |
 | 2026-10-26 | 96 | 42 |
 | 2026-10-25 | 68 | 27 |
 | 2026-10-24 | 81 | 32 |
@@ -97,15 +96,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-28 03:56 UTC**.
-14-day total: **20**; unique visitors: **8**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-10-28 09:56 UTC**.
+14-day total: **20**; unique visitors: **9**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-10-27 | 3 | 3 |
 | 2026-10-26 | 2 | 2 |
 | 2026-10-25 | 0 | 0 |
 | 2026-10-24 | 3 | 2 |
