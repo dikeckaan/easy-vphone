@@ -2,11 +2,11 @@
 
 ## Project statistics
 
-Updated: **2026-10-29 13:12 UTC**. Counts are events, not installs or people.
+Updated: **2026-10-29 15:56 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 14 |
+| ZIP downloads across releases | 15 |
 | Stars | 11 |
 | Forks | 2 |
 | Watchers | 0 |
@@ -24,17 +24,15 @@ Automated builds and verification downloads can contribute to these counters.
 
 | Release | Asset | Downloads | Bytes |
 |---|---|---:|---:|
-| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 9 | 525642 |
+| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 10 | 525642 |
 | v0.3.0 | SHA256SUMS | 3 | 94 |
 | v0.2.0 | easy-vphone-0.2.0-arm64.zip | 5 | 483040 |
 | v0.2.0 | SHA256SUMS | 2 | 94 |
 
 ## Clones
 
-Last successful traffic snapshot: **2026-10-29 09:56 UTC**.
+Last successful traffic snapshot: **2026-10-29 15:56 UTC**.
 14-day total: **1062**; unique cloners: **324**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
@@ -99,10 +97,8 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-10-29 09:56 UTC**.
+Last successful traffic snapshot: **2026-10-29 15:56 UTC**.
 14-day total: **21**; unique visitors: **10**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
