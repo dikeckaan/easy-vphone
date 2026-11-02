@@ -91,11 +91,11 @@ Based on the tools from [Lakr233/vphone-cli](https://github.com/Lakr233/vphone-c
 <!-- metrics:start -->
 ## Project statistics
 
-Updated: **2026-11-02 16:13 UTC**. Counts are events, not installs or people.
+Updated: **2026-11-02 21:58 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 16 |
+| ZIP downloads across releases | 18 |
 | Stars | 11 |
 | Forks | 2 |
 | Watchers | 0 |
