@@ -2,7 +2,7 @@
 
 ## Project statistics
 
-Updated: **2026-11-12 07:19 UTC**. Counts are events, not installs or people.
+Updated: **2026-11-12 09:49 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
@@ -11,10 +11,10 @@ Updated: **2026-11-12 07:19 UTC**. Counts are events, not installs or people.
 | Forks | 2 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
-| Clones, last 14-day snapshot | 819 |
-| Unique cloners, same snapshot | 251 |
-| Page views, last 14-day snapshot | 61 |
-| Unique visitors, same snapshot | 20 |
+| Clones, last 14-day snapshot | 858 |
+| Unique cloners, same snapshot | 269 |
+| Page views, last 14-day snapshot | 60 |
+| Unique visitors, same snapshot | 19 |
 
 [Detailed release downloads, daily clone/view history and collection timestamps](METRICS.md).
 GitHub does not expose unique downloaders. Clone/view uniqueness is limited to the reported window; daily uniques must not be summed as people.
@@ -31,15 +31,14 @@ Automated builds and verification downloads can contribute to these counters.
 
 ## Clones
 
-Last successful traffic snapshot: **2026-11-12 03:49 UTC**.
-14-day total: **819**; unique cloners: **251**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-11-12 09:49 UTC**.
+14-day total: **858**; unique cloners: **269**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-11-11 | 73 | 33 |
 | 2026-11-10 | 69 | 28 |
 | 2026-11-09 | 51 | 23 |
 | 2026-11-08 | 33 | 13 |
@@ -112,15 +111,14 @@ Archived daily counters (UTC; newest day can be incomplete). These are events, n
 
 ## Page views
 
-Last successful traffic snapshot: **2026-11-12 03:49 UTC**.
-14-day total: **61**; unique visitors: **20**.
-
-Traffic API unavailable to this collector; last successful snapshot retained.
+Last successful traffic snapshot: **2026-11-12 09:49 UTC**.
+14-day total: **60**; unique visitors: **19**.
 
 Archived daily counters (UTC; newest day can be incomplete). These are events, not lifetime unique people.
 
 | Day | Events | Unique that day |
 |---|---:|---:|
+| 2026-11-11 | 1 | 1 |
 | 2026-11-10 | 8 | 3 |
 | 2026-11-09 | 1 | 1 |
 | 2026-11-08 | 1 | 1 |
