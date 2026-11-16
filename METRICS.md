@@ -2,12 +2,12 @@
 
 ## Project statistics
 
-Updated: **2026-11-15 18:55 UTC**. Counts are events, not installs or people.
+Updated: **2026-11-16 06:42 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
 | ZIP downloads across releases | 18 |
-| Stars | 12 |
+| Stars | 13 |
 | Forks | 2 |
 | Watchers | 0 |
 | Open issues + pull requests | 0 |
