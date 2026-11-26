@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25 21:47 UTC",
+  "updated_at": "2026-11-26 08:30 UTC",
   "repository": {
     "stargazers_count": 13,
     "forks_count": 2,
@@ -13,7 +13,7 @@
       "assets": [
         {
           "name": "easy-vphone-0.3.0-arm64.zip",
-          "downloads": 16,
+          "downloads": 17,
           "bytes": 525642
         },
         {
