@@ -2,11 +2,11 @@
 
 ## Project statistics
 
-Updated: **2026-11-27 08:44 UTC**. Counts are events, not installs or people.
+Updated: **2026-11-27 21:25 UTC**. Counts are events, not installs or people.
 
 | Metric | Count |
 |---|---:|
-| ZIP downloads across releases | 23 |
+| ZIP downloads across releases | 25 |
 | Stars | 13 |
 | Forks | 2 |
 | Watchers | 0 |
@@ -24,7 +24,7 @@ Automated builds and verification downloads can contribute to these counters.
 
 | Release | Asset | Downloads | Bytes |
 |---|---|---:|---:|
-| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 18 | 525642 |
+| v0.3.0 | easy-vphone-0.3.0-arm64.zip | 20 | 525642 |
 | v0.3.0 | SHA256SUMS | 3 | 94 |
 | v0.2.0 | easy-vphone-0.2.0-arm64.zip | 5 | 483040 |
 | v0.2.0 | SHA256SUMS | 2 | 94 |
